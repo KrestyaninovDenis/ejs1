@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const {Book} = require('../models');
 const fileMiddleware = require('../middleware/file');
+const redis = require ('redis');
+const REDIS_URL = process.env.REDIS_URL;
+const client = redis.createClient ('redis://${REDIS_URL}');
 
 const stor = {
     books: [],

@@ -1,10 +1,6 @@
 const express = require ('express');
 const app = express();
 
-const redis = require ('redis');
-const REDIS_URL = process.env.REDIS_URL;
-const client = redis.createClient ('redis://${REDIS_URL}');
-
 const cors = require ('cors');
 const bodyParser = require ('body-parser');
 
