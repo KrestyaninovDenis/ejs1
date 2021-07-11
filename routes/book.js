@@ -4,7 +4,10 @@ const {Book} = require('../models');
 const fileMiddleware = require('../middleware/file');
 const redis = require ('redis');
 const REDIS_URL = process.env.REDIS_URL;
-const client = redis.createClient (3000, 94.228.115.129);
+const client = redis.createClient({
+    host: "redis",
+    port: 6379
+});
 
 const stor = {
     books: [],
